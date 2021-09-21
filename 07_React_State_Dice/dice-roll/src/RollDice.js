@@ -1,17 +1,26 @@
 import React, { Component } from 'react'
+import Die from './Die';
 
 class RollDice extends Component {
     static defaultProps = {
-        num: ['one', 'two', 'three', 'four', 'five', 'six']
+        sides: ['one', 'two', 'three', 'four', 'five', 'six']
     }
-    this.state = { isRolling: false }
+    constructor(props) {
+        super(props);
+        this.state = { die1: 'one', die2: 'two' }
+    }
 
-render() {
-    <div></div>
-    return (
+    render() {
+        return (
+            <div>
+                <Die num={this.state.die1} />
+                <Die num={this.state.die1} />
 
-    );
-}
+                <button >Roll Dice</button>
+            </div>
+
+        );
+    }
 }
 
 export default RollDice;

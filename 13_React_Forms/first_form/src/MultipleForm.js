@@ -27,6 +27,7 @@ class Form extends Component {
             <div>
                 <h1>Form Demo</h1>
                 <form onSubmit={this.handleSubmit}>
+                    <label htmlFor="username">Username</label>
                     <input
                         type="text"
                         name="username" // name neeeds to match what we did in the state

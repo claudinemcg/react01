@@ -3,6 +3,7 @@ import React, {Component } from 'react';
 class Todo extends Component {
     constructor(props){
         super(props)
+        this.setState = {isEditing: false, task:this.props.task}
         // this.handleEditClick = this.handleEditClick.bind(this);
         this.handleDeleteClick = this.handleDeleteClick.bind(this);
     }
@@ -15,7 +16,10 @@ class Todo extends Component {
         this.props.removeTask(this.props.id)
     }
     render() {
+        if (this.state.isEditing) {
+        } else {}
         return (
+           
             <div>
                 <div 
                     style= {{

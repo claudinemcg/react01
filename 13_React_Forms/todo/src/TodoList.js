@@ -21,6 +21,10 @@ class TodoList extends Component {
             todos: this.state.todos.filter(task => task.id !== id)
         });
     }
+
+    // update(id, updatedTask){
+
+    // }
     
     render() {
         const todos = this.state.todos.map(todo =>
@@ -31,7 +35,7 @@ class TodoList extends Component {
                 removeTask={this.remove}
             />
         )
-        
+
         return (
             <div>
                 <NewTodoForm create={this.create}/>

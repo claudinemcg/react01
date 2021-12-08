@@ -1,6 +1,19 @@
 import React, {Component } from 'react';
 
 class Todo extends Component {
+    constructor(props){
+        super(props)
+        // this.handleEditClick = this.handleEditClick.bind(this);
+        this.handleDeleteClick = this.handleDeleteClick.bind(this);
+    }
+
+    // handleEditClick(){
+
+    // }
+
+    handleDeleteClick(){
+        this.props.removeTask(this.props.id)
+    }
     render() {
         return (
             <div>
@@ -14,8 +27,8 @@ class Todo extends Component {
                     <h2>{this.props.task}</h2>
                     {/* this needs to take in the form */}
                 </div>
-                <button>Edit</button>
-                <button>Delete</button>
+                {/* <button onClick={this.handleEditClick}>Edit</button> */}
+                <button onClick={this.handleDeleteClick}>Delete</button>
             </div>
         );
     }

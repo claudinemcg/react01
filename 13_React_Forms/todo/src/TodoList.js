@@ -22,7 +22,6 @@ class TodoList extends Component {
         });
     }
     
-
     render() {
         const todos = this.state.todos.map(todo =>
             <Todo 
@@ -32,6 +31,7 @@ class TodoList extends Component {
                 removeTask={this.remove}
             />
         )
+        
         return (
             <div>
                 <NewTodoForm create={this.create}/>

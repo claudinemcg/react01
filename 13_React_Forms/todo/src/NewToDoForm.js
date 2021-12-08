@@ -30,7 +30,7 @@ class NewTodoForm extends Component {
                     <input
                         name='task'
                         id='task'
-                        // type='text'
+                        placeholder='New Task'
                         value={this.state.task}
                         onChange={this.handleChange}
                     />

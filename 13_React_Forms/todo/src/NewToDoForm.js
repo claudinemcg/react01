@@ -7,7 +7,7 @@ class NewTodoForm extends Component {
         this.state = {task:''}
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
+        // this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     handleChange(evt){

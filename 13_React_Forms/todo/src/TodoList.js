@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewTodoForm from './NewToDoForm';
+import NewTodoForm from './NewTodoForm';
 import Todo from './Todo';
 
 class TodoList extends Component {
@@ -9,6 +9,7 @@ class TodoList extends Component {
         this.create = this.create.bind(this);
         this.remove = this.remove.bind(this);
         this.update = this.update.bind(this);
+        this.toggleCompletion = this.toggleCompletion.bind(this);
     }
 
     create(newTask){
@@ -34,15 +35,29 @@ class TodoList extends Component {
         })
         this.setState({todos: updatedTodos}); // array just created above
     }
+    toggleCompletion(id){
+        const updatedTodos = this.state.todos.map(todo => {
+            if (todo.id === id) {
+                return { ...todo, completed: !todo.completed }
+                // ...todo keeps all data e.g. it's id
+                // completed changes to !completed
+            }
+            return todo;
+        })
+        this.setState({ todos: updatedTodos }); // array just created above
+    }
     
+
     render() {
         const todos = this.state.todos.map(todo =>
             <Todo 
                 key= {todo.id}
                 id={todo.id}
                 task={todo.task}
+                completed={todo.completed}
                 removeTask={this.remove}
                 updateTodo={this.update}
+                toggleTodo={this.toggleCompletion}
             />
         )
 

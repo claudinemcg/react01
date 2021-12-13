@@ -23,10 +23,6 @@ class NewTodoForm extends Component {
         this.setState({ task: '' })
     }
 
-    // handleUpdate(){
-
-    // }
-
     render() {
         return (
             <div>

@@ -1,4 +1,47 @@
-.completed {
-    text-decoration: line-through;
-    color: lightgray;
+.Todo {
+    display: flex;
+    margin: 0 -3rem 4px;
+    padding: 1.1rem 3rem;
+    justify-content: space-between ;
+    align-items: center;
+    background: rgba(255,255,255, 0.1);
+}
+
+.Todo-task.completed {
+    position: relative;
+    opacity: 0.6;
+}
+
+.Todo-task.completed:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -0.5rem; /* starting line through a bit before text */
+    display: block; 
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    animation: strikeitem 0.5s ease-out 0s forwards;
+    /* animates line from left to right */
+}
+
+@keyframes strikeitem {
+    to {
+        width: calc(100% + 1rem); /* line goes through text & a little after it*/
+    }
+}
+
+.Todo-buttons {
+    flex-shrink: 0;
+    padding-left: 0.7em;
+}
+
+.Todo-buttons button{
+    border:  none;
+    font-size: 1em;
+    margin: .4em;
+    background: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    color: #fff;
 }

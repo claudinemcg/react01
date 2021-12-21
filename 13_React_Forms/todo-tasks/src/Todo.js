@@ -41,7 +41,7 @@ class Todo extends Component {
         if (this.state.isEditing){
            result= ( 
                 <div className='Todo'>
-                    <form>
+                    <form className='Todo-edit-form'>
                         <input
                             type="text"
                             name="task"
